@@ -14,7 +14,7 @@ public class NasaActivity extends Activity {
 		//Find that webView1
 				WebView myWebView = (WebView) findViewById(R.id.webView1);
 				//Now we open asset/index.html
-				myWebView.loadUrl("file:///android_asset/nasa.htm");
+				myWebView.loadUrl("file:///android_asset/NASA.htm");
 				myWebView.getSettings().setBuiltInZoomControls(true);
 //			    Currently we didn't use any scripting
 		// So,	myWebView.getSettings().setJavaScriptEnabled(true);

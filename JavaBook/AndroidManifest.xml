@@ -31,6 +31,11 @@
         <activity
             android:name="saad.play.javabook.NasaActivity"
             android:label="@string/title_activity_nasa" >
+           
+        </activity>
+        <activity
+            android:name="saad.play.javabook.Surprise"
+            android:label="@string/title_activity_surprise" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
