@@ -12,9 +12,9 @@ public class Surprise extends Activity {
 		super.onCreate(savedInstanceState);
 		Intent intent = new Intent();
 		intent.setClass(this, NasaActivity.class);
-	if(Math.random() > 0.5) {
-		intent.setClass(this, MainActivity.class);
-	}
+		if (Math.random() > 0.5) {
+			intent.setClass(this, MainActivity.class);
+		}
 		startActivity(intent);
 		finish();
 	}

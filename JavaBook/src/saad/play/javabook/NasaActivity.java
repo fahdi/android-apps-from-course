@@ -11,13 +11,13 @@ public class NasaActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		//Find that webView1
-				WebView myWebView = (WebView) findViewById(R.id.webView1);
-				//Now we open asset/index.html
-				myWebView.loadUrl("file:///android_asset/NASA.htm");
-				myWebView.getSettings().setBuiltInZoomControls(true);
-//			    Currently we didn't use any scripting
-		// So,	myWebView.getSettings().setJavaScriptEnabled(true);
+		// Find that webView1
+		WebView myWebView = (WebView) findViewById(R.id.webView1);
+		// Now we open asset/index.html
+		myWebView.loadUrl("file:///android_asset/NASA.htm");
+		myWebView.getSettings().setBuiltInZoomControls(true);
+		// Currently we didn't use any scripting
+		// So, myWebView.getSettings().setJavaScriptEnabled(true);
 	}
 
 	@Override
