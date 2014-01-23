@@ -19,7 +19,7 @@ WebView myWebView;
 		//Find that webView1
 		myWebView = (WebView) findViewById(R.id.webView1);
 		//Now we open asset/index.html
-		myWebView.loadUrl("file:///android_asset/index.html");
+		myWebView.loadUrl("http://lumilife.ae/cms/");
 		myWebView.getSettings().setBuiltInZoomControls(true);
 //	    Currently we didn't use any scripting
 // So,	myWebView.getSettings().setJavaScriptEnabled(true);
