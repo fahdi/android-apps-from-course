@@ -1,0 +1,147 @@
+﻿Version=2.5
+IconFile=
+NumberOfModules=1
+Module1=Charts
+ModuleVisible1=1
+Package=b4a.piechartdemo
+DoNotOverwriteManifest=False
+ManifestCode=
+UserTypesHint=PieItem,PieData,GraphInternal,Graph,LinePoint,LineData,BarData
+NumberOfFiles=1
+File1=main.bal
+NumberOfLibraries=1
+Library1=core
+@EndOfDesignText@
+#Region Module Attributes
+	#FullScreen: False
+	#IncludeTitle: True
+	#ApplicationLabel: PieChart Demo
+	#VersionCode: 1
+	#VersionName: 
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+Sub Process_Globals
+Dim Total_sales As Int
+	Dim Pq1,Pq2,Pq3,Pq4 As Double
+End Sub
+
+Sub Globals
+	Dim pnlPie As Panel
+	Dim cmdBack As Button
+	Dim txtQ1 As EditText
+	Dim txtQ2 As EditText
+	Dim txtQ3 As EditText
+	Dim txtQ4 As EditText
+	
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("main")	
+End Sub
+Sub cmdBack_CLick
+
+	RemoveView
+	Activity.LoadLayout("main")
+	
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+	
+End Sub
+
+Sub CreatePieTab
+	' initialze the panel to display the pie chart
+	pnlPie.Initialize("pnlPie")
+	Activity.AddView(pnlPie, 5%x, 5%y, 90%x, 90%y)
+	
+	' initialize the pie data
+	Dim PD As PieData
+	PD.Initialize
+	
+	 ' Set the target view
+	PD.Target = pnlPie
+	
+	' Add the items.The last parameter Is the color. Passing 0 will make it a random color.
+	Charts.AddPieItem(PD, "Quarter 1: "&txtQ1.Text&" ( "&(Round2(Pq1,2))& "% )",txtQ1.Text,0)
+	Charts.AddPieItem(PD, "Quarter 2: "&txtQ2.Text&" ( "&(Round2(Pq2,2))& "% )",txtQ2.Text, 0)
+	Charts.AddPieItem(PD, "Quarter 3: "&txtQ3.Text&" ( "&(Round2(Pq3,2))& "% )",txtQ3.Text, 0)
+	Charts.AddPieItem(PD, "Quarter 4: "&txtQ4.Text&" ( "&(Round2(Pq4,2))& "% )",txtQ4.Text, 0)
+	
+	' Total size of gaps between slices. Set to 0 for no gaps.
+	PD.GapDegrees = 0
+	
+	' The background color of the legend bitmap.
+	PD.LegendBackColor = Colors.Transparent
+	
+	' This call draws the pie.
+	' PD - The pie data
+	' Colors.White - The view's background color
+	' True - Create a legend bitmap.
+	Dim legend As Bitmap
+	legend = Charts.DrawPie(PD, Colors.White, True)
+
+	If legend.IsInitialized Then
+		' Initialize the legend ImageView
+		Dim ImageView1 As ImageView
+		ImageView1.Initialize("")
+		ImageView1.SetBackgroundImage(legend)
+	
+		' Add the legend ImageView to the Pie Panel
+		pnlPie.AddView(ImageView1, 2dip,0dip, legend.Width, legend.Height)
+		
+		' Add the Button to the Pie Panel
+		cmdBack.initialize("cmdBack")
+        
+		pnlPie.AddView(cmdBack,200dip, 290dip,25%x, 12%y)
+        cmdBack.TextSize = 15
+		cmdBack.Text="Home"
+		
+		' Add the label the Pie Panel, to display total sales
+		Dim lblTotal As Label
+		lblTotal.initialize("")
+        pnlPie.AddView(lblTotal,5dip, 290dip, 30%x, 15%y)
+		
+        lblTotal.TextSize = 15
+		lblTotal.TextColor = Colors.Black
+				
+		'Display Total sales	
+		lblTotal.Text="Total Sales: Php " & Total_sales
+		
+						
+	End If
+End Sub
+
+Sub cmdViewChart_Click
+
+If txtQ1.Text="" OR txtQ2.Text="" OR txtQ3.Text="" OR txtQ4.Text="" Then
+
+	Msgbox ("Missing field","Please check!")
+
+Else
+	RemoveView
+		'Compute Total sales
+		Total_sales = txtQ1.Text+txtQ2.Text+txtQ3.Text+txtQ4.Text
+		
+		'Compute Percentage %
+		Pq1 = (txtQ1.Text/Total_sales)*100
+		Pq2 = (txtQ2.Text/Total_sales)*100
+		Pq3 = (txtQ3.Text/Total_sales)*100
+		Pq4 = (txtQ4.Text/Total_sales)*100
+		
+	CreatePieTab
+End If
+
+End Sub
+Sub RemoveView
+	Dim i As Int
+	
+		For i = Activity.NumberOfViews-1 To 0 Step-1
+			Activity.RemoveViewAt (i)
+		Next
+		
+End Sub
+Sub cmdCancel_Click
+	Activity.Finish
+End Sub
