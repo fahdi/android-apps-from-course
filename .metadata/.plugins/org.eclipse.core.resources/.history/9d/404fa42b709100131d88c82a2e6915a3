@@ -1,0 +1,49 @@
+package com.example.preferences;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.util.Log;
+import android.view.Menu;
+import android.widget.TextView;
+
+public class MainActivity extends Activity {
+
+	private SharedPreferences mPrefs;
+	private TextView mTextView;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		Log.d("MainActivity","onCreate billa!"); /* Tag and text*/
+		mPrefs=getPreferences(MODE_PRIVATE);
+		int count = mPrefs.getInt("count",0);
+		
+		Log.d("MainActivity","The count is " +count); /* Tag and text*/
+		
+		count++;
+		
+		Log.d("MainActivity","The new count is " +count); /* Tag and text*/
+		
+		Editor editor = mPrefs.edit();
+		editor.putInt("count", count);
+		editor.commit();
+		
+		mTextView = new TextView(this);
+		mTextView.setTextSize(80);
+		
+		setContentView(mTextView);
+		
+		setContentView(R.layout.activity_main);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+}
