@@ -34,6 +34,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
 
+	private static final String CLICK = "Click!";
 	private static final String TAG = MainActivity.class.getSimpleName();
 	// A preference key
 	private static final String KEY_COUNT = "count";
@@ -90,7 +91,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				// opaque green. Why?
 				
 				tv.setTextColor(0xff00ff00);
-				tv.setText("Click!" + clickCount);
+				tv.setText(CLICK + clickCount);
 				
 			}
 		};
