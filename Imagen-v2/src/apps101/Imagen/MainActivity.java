@@ -39,7 +39,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private static final String KEY_COUNT = "count";
 	
 	private SharedPreferences mPrefs;
-	private TextView mTextView;
+	private TextView mTextView; 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
