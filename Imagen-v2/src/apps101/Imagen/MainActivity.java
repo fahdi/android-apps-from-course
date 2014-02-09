@@ -39,7 +39,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private static final String KEY_COUNT = "count";
 	
 	private SharedPreferences mPrefs;
-	private TextView mTextView; 
+	private TextView tv; 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,14 +53,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		editor.putInt(KEY_COUNT, count);
 		editor.commit();
 
-		mTextView = new TextView(this);
-		mTextView.setTextSize(80);
-		mTextView.setText("Count : " + count);
+		tv = new TextView(this);
+		tv.setTextSize(80);
+		tv.setText(String.valueOf(count)); // Kutte da puttar!
 		Log.d(TAG, "Count is " + count);
-		setContentView(mTextView);
+		setContentView(tv);
 		// setContentView(R.layout.activity_main);
 
-		mTextView.setOnClickListener(this);
+		tv.setOnClickListener(this);
 	}
 
 	@Override
@@ -85,18 +85,19 @@ public class MainActivity extends Activity implements OnClickListener {
 				//Todo: Can you refactor these keys into a constants?
 				int clickCount = 20 + mPrefs.getInt("clicked", 0);
 				mPrefs.edit().putInt("clicked", clickCount).putBoolean("user", true).commit();
+				getPreferences(MODE_PRIVATE).edit().putString("flavor","chocolate").commit();
 				// The hexadecimal value 0xff00ff00 is
 				// opaque green. Why?
 				
-				mTextView.setTextColor(0xff00ff00);
-				mTextView.setText("Click!" + clickCount);
+				tv.setTextColor(0xff00ff00);
+				tv.setText("Click!" + clickCount);
 				
 			}
 		};
 		
 		// Run the adder code in 2000 milliseconds time
 		// i.e. 2 seconds
-		mTextView.postDelayed(adder, 2000);
+		tv.postDelayed(adder, 2000);
 		
 	}
 
