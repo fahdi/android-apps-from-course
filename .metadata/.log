@@ -2909,3 +2909,86 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/Imagen-v2/res'
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2014-02-09 15:56:03.923
 !MESSAGE fileChanged: failed to find manifest package for project Imagen-v2
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-09 15:58:10.566
+!MESSAGE 
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/Imagen-v2/res' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:341)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:215)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:266)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:249)
+	at com.android.ide.eclipse.adt.internal.sdk.Sdk$7.run(Sdk.java:1453)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2014-02-09 15:58:10.567
+!MESSAGE Resource '/Imagen-v2/res' does not exist.
+
+!ENTRY org.eclipse.core.resources 4 4 2014-02-09 15:58:10.572
+!MESSAGE Exception occurred while saving project preferences: /Imagen-v2/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk '/Users/fahadmurtaza/Downloads/Week 07 (An App for Bitmaps and Images)/7.2. Event queue, Runnable and anonymous inner class/Imagen-v2/.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOption(JavaProject.java:2953)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.checkAndFixCompilerCompliance(ProjectHelper.java:511)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProjectClasspathEntries(ProjectHelper.java:420)
+	at com.android.ide.eclipse.adt.internal.sdk.Sdk$1$1.run(Sdk.java:1137)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2014-02-09 15:58:10.572
+!MESSAGE A resource already exists on disk '/Users/fahadmurtaza/Downloads/Week 07 (An App for Bitmaps and Images)/7.2. Event queue, Runnable and anonymous inner class/Imagen-v2/.settings'.
+
+!ENTRY org.eclipse.core.resources 4 4 2014-02-09 15:58:10.573
+!MESSAGE Exception occurred while saving project preferences: /Imagen-v2/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk '/Users/fahadmurtaza/Downloads/Week 07 (An App for Bitmaps and Images)/7.2. Event queue, Runnable and anonymous inner class/Imagen-v2/.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOption(JavaProject.java:2953)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.checkAndFixCompilerCompliance(ProjectHelper.java:513)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProjectClasspathEntries(ProjectHelper.java:420)
+	at com.android.ide.eclipse.adt.internal.sdk.Sdk$1$1.run(Sdk.java:1137)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2014-02-09 15:58:10.573
+!MESSAGE A resource already exists on disk '/Users/fahadmurtaza/Downloads/Week 07 (An App for Bitmaps and Images)/7.2. Event queue, Runnable and anonymous inner class/Imagen-v2/.settings'.
+
+!ENTRY org.eclipse.core.resources 4 4 2014-02-09 15:58:10.574
+!MESSAGE Exception occurred while saving project preferences: /Imagen-v2/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk '/Users/fahadmurtaza/Downloads/Week 07 (An App for Bitmaps and Images)/7.2. Event queue, Runnable and anonymous inner class/Imagen-v2/.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOption(JavaProject.java:2953)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.checkAndFixCompilerCompliance(ProjectHelper.java:515)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProjectClasspathEntries(ProjectHelper.java:420)
+	at com.android.ide.eclipse.adt.internal.sdk.Sdk$1$1.run(Sdk.java:1137)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2014-02-09 15:58:10.575
+!MESSAGE A resource already exists on disk '/Users/fahadmurtaza/Downloads/Week 07 (An App for Bitmaps and Images)/7.2. Event queue, Runnable and anonymous inner class/Imagen-v2/.settings'.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-09 15:58:10.708
+!MESSAGE fileChanged: failed to find manifest package for project Imagen-v2
+!SESSION 2014-02-09 16:00:50.168 -----------------------------------------------
+eclipse.buildId=v22.3.0-887826
+java.version=1.7.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product -keyring /Users/fahadmurtaza/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product com.android.ide.eclipse.adt.package.product -keyring /Users/fahadmurtaza/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-02-09 16:00:52.763
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
